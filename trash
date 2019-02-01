@@ -1,0 +1,126 @@
+<script type="text/javascript">
+  $("#reg_button").click(function(){
+    $("#popup").css({"display":"block","color":"black"});
+    var x = $("#popup").offset().top;
+    $("html ,body").animate({ scrollTop: x},800);
+  });
+
+  // $("#closers").click(function(){
+  //   ${"#buysell"}.css({"display":"none"});
+  // });
+  $("#close").click(function(){
+    $("#popup").css({"display":"none"});
+    var y = $("#buysell").offset().top;
+    $("html ,body").animate({ scrollTop: y},800);
+  });
+
+  $("#reg_buttons").click(function(){
+    $("#popups").css({"display":"block","color":"black"});
+    var z = $("#popups").offset().top;
+    $("html ,body").animate({ scrollTop: z},800);
+
+  });
+  $("#closer").click(function(){
+    $("#popups").css({"display":"none"});
+    var a = $("#buysell").offset().top;
+    $("html ,body").animate({ scrollTop: a},800);
+  });
+</script>
+
+
+<li class="menu-hasdropdown">
+  <a href="#">Settings</a><span class="icon"><i class="fa fa-gear"></i></span>
+  <label title="toggle menu" for="settings">
+<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+</label>
+  <input type="checkbox" class="sub-menu-checkbox" id="settings" />
+  <ul class="sub-menu-dropdown">
+    <!-- <li class="current"><a href="#welcome">Your Dashboard</a></li> -->
+    <li><a href="">Profile</a></li>
+    <li><a href="">Security</a></li>
+    <li><a href="">Account</a></li>
+  </ul>
+</li>
+
+<?php if(isset($_POST['login'])){
+    $email = $con->real_escape_string($_POST['email']);
+    $password = $con->real_escape_string($_POST['password']);
+
+    if($email=="" || $password==""){
+      $msg = "Please fill all the details";
+    }else{
+      $query = "SELECT * FROM Registrations WHERE Email = '$email'";
+      $result = mysqli_query($con,$query);
+      $num = mysqli_num_rows($result);
+      if($num == 1){
+        $data = mysqli_fetch_array($result);
+        if(password_verify($password,$data['Password'])) {
+          $events = array('Swadesh','AdVenture','Pitch_Perfect','renderico','CEO','Teen_Titans','BizMantra','BizQuiz','ConsoWorld');
+          $msg = "
+            <div class=''>
+              <form action='register.php' method='post'>
+              <select type="email" name="type" style="text-transform: none;" class="form-control s-form-v3__input" placeholder="* Type">
+                  <option value="0">Team</option>
+                  <option value="1">Member</option>
+                  <option value="2">Reference</option>
+                  <option value="3">Questionnaire</option>
+              </select>
+              <p>Hi! Please select an event to continue.</p>
+            </div>
+            ";
+          for($var = 0;$var < 9; $var++ ){
+            if($data[$events[$var]] == 1){
+              $msg = "<input type='checkbox' name='.$events[$var].' value='.$events[$var].'>";
+            }
+          }
+          $msg = "<input type='submit' name='log' value='Login'>
+            </form>";
+        }else{
+          echo("Error description: " . mysqli_error($con));
+        }
+      }else{
+        $msg = "Your email isn't registered with us.";
+      }
+    ?>
+  <?php }
+      }else{ ?>
+      <form action="login.php" method="post">
+        <input type='email' name='email' value='' placeholder='*Your Email' />
+        <input type='password' name='password' value='' placeholder='*Your Password' />
+        <input type="submit" name="login" value="Next" />
+      </form><br/>
+      <a href="regnew.php">Haven't registered yet?</a>
+  <?php } ?>
+
+  if($_SESSION['email']){
+    $email = $_SESSION['email'];
+
+    $query = "SELECT * FROM Registrations WHERE Email='$email'";
+    $result = mysqli_query($con,$query);
+    $num = mysqli_num_rows($result);
+
+    if($num == 0){
+      $msg = "Please <a href='regnew.php'>REGISTER</a> before you continue.";
+    }else{
+      $data = mysqli_fetch_array($result);
+      $select_event = "
+        <form action='register.php' method='get'>
+        <select name='event'>
+          <option value='' selected disabled hidden>Choose an Event</option>
+          <option value='swadesh'>Swadesh</option>
+          <option value='adventure'>AdVenture</option>
+          <option value='pitchperfect'>Pitch Perfect</option>
+          <option value='renderico'>render.ico</option>
+          <option value='ceo'>CEO</option>
+          <option value='teentitans'>Teen Titans</option>
+          <option value='bizmantra'>BizMantra</option>
+          <option value='bizquiz'>BizQuiz</option>
+          <option value='consoworld'>ConsoWorld</option>
+        </select>
+        <input type='submit' name='event' value='Next'>
+        </form>";
+    }
+
+  }else{
+    header('location:login.php?ref=1');
+  }
