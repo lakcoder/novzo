@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="books, share, exchange, academics, fiction, Science, rent, sell, buy, knowledge, stories, novels, novel, novel zone, library">
   <link rel="shortcut icon" href="../img/logos/t1.png">
-  <title><?php echo $pageTitle ?> || Novzo - Share, Exchange, Buy, Rent, Sell, Donate books</title>
+  <title><?php echo $pageTitle ?> || Novzo</title>
 
   <!-- FACEBOOK -->
   <meta property="og:title" content="Novzo - Share, Exchange, Buy, Rent, Sell books and get the best deal">
@@ -31,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/linearicons.css">
@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/checkout.css">
-  
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131403091-1"></script>
 <script>
