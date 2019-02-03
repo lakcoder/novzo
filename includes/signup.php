@@ -45,12 +45,7 @@
 
           <p class="fieldset">
             <label class="image-replace cd-email" for="signup-email">College</label>
-            <select class="full-width has-padding has-border" id="signup-college" name="college">
-              <option value="" selected disabled hidden>Choose College</option>
-              <option value="VNIT">Visvesvaraya National Institute of Technology</option>
-              <option value="RKNEC">Shri Ramdeobaba College of Engineering and Management</option>
-              <option value="Other">Others</option>
-            </select>
+            <input class="full-width has-padding has-border" id="signup-contact" type="tel" name="contact" placeholder="Phone no.">
           </p>
 
           <p class="fieldset">

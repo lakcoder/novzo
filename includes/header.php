@@ -7,21 +7,8 @@
             <div class="logo">
                 <a href="index.php"><img src="img/logos/tt2.png" alt="Novzo Logo" height="55.76" width ="100" /></a>
             </div>
-            <div id="mainListDiv" class="main_list">
+            <div class="main_list">
                 <ul class="navlinks">
-                    <li class="menu-active"><a href="index.php">Home</a></li>
-                    <li class="dropdown">
-                      <a class="menu-active" href="#">Services</a>
-                      <div class="dropdown-content"style="background:white;">
-                          <a class="dropdown-itens" href="rent.php">Rent</a>
-                          <a class="dropdown-itens" href="buy.php">Buy Books</a>
-                          <a class="dropdown-itens" href="exchange.php">Exchange</a>
-                          <a class="dropdown-itens" href="sell.php">Sell</a>
-                          <a class="dropdown-itens" href="donate.php">Donate</a>
-                          <a class="dropdown-itens" href="request.php">Request</a>
-                      </div>
-                    </li>
-                    <li class="menu-active"><a href="prayaas.php">Prayaas Books</a></li>
           					<?php  if (isset($_SESSION['username'])) { ?>
           						<!--<li class="menu-active"><a href="dashboard.php">Dashboard</a></li>-->
           						<li class="menu-active"><a href="regphp/logout.php">Logout</a></li>
@@ -30,6 +17,43 @@
           					<?php } ?>
                 </ul>
             </div>
+            <div class="input-wrap main_list">
+              <div class="form-box d-flex justify-content-between" style="border: 1px solid #000;">
+                <input id="search_books" type="text" placeholder="Search Books" class="form-control" name="search" />
+                <button type="submit" class="btn ti-search"></button>
+              </div>
+              <div id="result"></div>
+              <script>
+                              $(document).ready(function(){
+                                load_data();
+                                function load_data(query)
+                                {
+                                  $.ajax({
+                                    url:"regphp/search.php",
+                                    method:"POST",
+                                    data:{query:query},
+                                    success:function(data)
+                                    {
+                                      $('#result').html(data);
+                                    }
+                                  });
+                                }
+
+                                $('#search_books').keyup(function(){
+                                  var search = $(this).val();
+                                  if(search != '')
+                                  {
+                                    load_data(search);
+                                  }
+                                  else
+                                  {
+                                    load_data();
+                                  }
+                                });
+                              });
+                          </script>
+            </div>
+          </div>
             <span class="navTrigger">
                 <i></i>
                 <i></i>

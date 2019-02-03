@@ -10,9 +10,9 @@ if(isset($_POST['register'])){
 //   header('location:../index.php');
   $username = $con->real_escape_string($_POST['username']);
   $email = $con->real_escape_string($_POST['email']);
-  $college = $con->real_escape_string($_POST['college']);
+  $contact = $con->real_escape_string($_POST['contact']);
   $password = $con->real_escape_string($_POST['password']);
-  if($username=="" || $email=="" || $college=="" || $password==""){
+  if($username=="" || $email=="" || $contact=="" || $password==""){
       $msgr1 = "Please fill all the details";
   }else{
     $hashed_password = $con->real_escape_string(password_hash($password, PASSWORD_DEFAULT));
@@ -30,8 +30,8 @@ if(isset($_POST['register'])){
       $token = substr($token, 0, 10);
 
       // header('location:../index.php');
-      $q="INSERT INTO Registrations(Username,College,Email,Password,ConfirmEmail,token) VALUES('$username','$college','$email','$hashed_password','0','$token')";
-      $query = "INSERT INTO Users(Email) VALUES('$email')";
+      $q="INSERT INTO Registrations(Username,Contact,Email,Password,ConfirmEmail,token) VALUES('$username','$contact','$email','$hashed_password','0','$token')";
+      $query = "INSERT INTO Users(Contact,Email) VALUES('$contact','$email')";
       if(mysqli_query($con,$q) && mysqli_query($con,$query)){
           $msgr1 = "You are registered with us!";
       }
@@ -197,7 +197,7 @@ if(isset($_POST['register'])){
 
 });
 	</script>
-    
+
     <section class="relative">
   <div class="cd-user-modal" style="padding-top:2em;"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -289,7 +289,7 @@ if(isset($_POST['register'])){
     </div> <!-- cd-user-modal-container -->
   </div> <!-- cd-user-modal -->
 </section>
-    
+
   <section class="contact-page-area relative" style="padding-top:7em;padding-bottom:7em;">
     <div class="container cart-container">
     <div class="box">
