@@ -46,11 +46,11 @@
       }else{
         echo("Error description: " . mysqli_error($con));
       }
-    
+
     require 'vendor/autoload.php';
-    
+
     $mail = new PHPMailer(TRUE);
-    
+
     try {
          $mail->setFrom('office@novzo.in', 'Novzo');
          $mail->addAddress($email, $name);
@@ -81,9 +81,9 @@
       {
          echo $e->getMessage();
       }
-      
+
       $mail2 = new PHPMailer(TRUE);
-      
+
       try {
          $mail2->setFrom('office@novzo.in', 'Novzo');
          $mail2->addAddress('candidelib@gmail.com', 'Novzo');
@@ -98,7 +98,7 @@
                   </body>
               </html>
          ';
-         
+
          $mail2->send();
       }
       catch (Exception $e)
@@ -109,7 +109,7 @@
       {
          echo $e->getMessage();
       }
-      
+
       $mail2 = new PHPMailer(TRUE);
 ?>
 
@@ -325,7 +325,7 @@
     <script type="text/javascript" src="../js/components/header-sticky.min.js"></script>
 </body>
 </html>
-<?php 
+<?php
     }else{
         header('location:index.php');
     }

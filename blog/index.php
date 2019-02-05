@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require "../dbconnect/connect_to_book.php";
+  require "../dbconnect/connect_to_blog.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
           $admin = "<div><a href='del_post.php?pid=$pid'>Delete</a>&nbsp;<a href='del_post.php?pid=$pid'>Edit</a></div>";
 
           $output = $bbcode->Parse($content);
-          $posts .= "<div><h2><a href='view_posts.php?pid=$id'>$title</a></h2><h3>$date</h3><p>$output</p>$admin<hr/></div>"
+          $posts .= "<div><h2><a href='view_posts.php?pid=$id'>$title</a></h2><h3>$date</h3><p>$output</p>$admin<hr/></div>";
         }
         echo $posts;
       }else {

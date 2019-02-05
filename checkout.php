@@ -9,7 +9,7 @@
 		$book = $con->real_escape_string($_GET['Books']);
 		$bookid = $con->real_escape_string($_GET['Book_ID']);
 
-		$query = "SELECT * FROM Users WHERE Email='{$_SESSION['email']}'";
+		$query = "SELECT * FROM Registrations WHERE Email='{$_SESSION['email']}'";
 		$result = mysqli_query($con,$query);
         $num = mysqli_num_rows($result);
 
@@ -46,74 +46,7 @@
 
 				<div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">Phone</span>
-					<input class="input100" type="text" name="phone" value="<?php echo $data['Phone']; ?>" placeholder="" required>
-				</div>
-
-				<div class="wrap-input100 input100-select bg1">
-					<span class="label-input100">College</span>
-					<div>
-						<select class="js-select2" name="college" onchange="show_vnit(this)">
-							<option value="0">Choose your college</option>
-							<option id="vnit" value="VNIT">VNIT</option>
-							<option value="RKNEC">BRC</option>
-							<option value="Other">Other</option>
-						</select>
-						<div class="dropDownSelect2"></div>
-					</div>
-				</div>
-
-				<div class="w-full dis-none" id="show_vnit" style="display:none;">
-				        <div class="wrap-input100 validate-input bg1">
-				            <span class="label-input100">Department</span>
-							<select class="js-select2" name="department">
-                                <option name="CSE" value="CSE" >CSE</option>
-                                <option name="MEC" value="MEC" >MEC</option> 
-                                <option name="CHE" value="CHE" >CHE</option>
-                                <option name="EEE" value="EEE" >EEE</option>
-                                <option name="ECE" value="ECE" >ECE</option>
-                                <option name="MME" value="MME" >MME</option>
-                                <option name="MIN" value="MIN" >MIN</option>
-                                <option name="CIV" value="CIV" >CIV</option>
-                                <option name="ARCH" value="ARCH" >ARCH</option>  
-                            </select>
-						</div>
-						<div class="wrap-input100 validate-input bg1">
-							<span class="label-input100">College ID *</span>
-							<input class="input100" type="text" name="collegeid" value="<?php echo $data['Room']; ?>" placeholder="">
-						</div>
-						<div class="wrap-input100 validate-input bg1">
-							<span class="label-input100">Section *</span>
-							<input class="input100" type="text" name="section" value="<?php echo $data['Room']; ?>" placeholder="">
-						</div>
-					<div class="wrap-contact100-form-radio">
-						<span class="label-input100">You Are A?</span>
-
-						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="staytype" value="Hostellite" onclick="show_hostel()">
-							<label class="label-radio100" for="radio1">
-								Hostellite
-							</label>
-						</div>
-
-						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="staytype" value="dayski" onclick="show_hostel()">
-							<label class="label-radio100" for="radio2">
-								Dayski
-							</label>
-						</div>
-					</div>
-					<div class="w-full dis-none" id="show_hostel" style="display:none;">
-						<div class="wrap-input100 validate-input bg1">
-							<span class="label-input100">Room Number *</span>
-							<input class="input100" type="text" name="room" value="<?php echo $data['Room']; ?>" placeholder="">
-						</div>
-
-						<div class="wrap-input100 validate-input bg1">
-							<span class="label-input100">Hostel Block *</span>
-							<input class="input100" type="text" name="hostel" value="<?php echo $data['Hostel_Block']; ?>" placeholder="">
-						</div>
-					</div>
-
+					<input class="input100" type="text" name="phone" value="<?php echo $data['Contact']; ?>" placeholder="" required>
 				</div>
 
 				<div class="container-contact100-form-btn">

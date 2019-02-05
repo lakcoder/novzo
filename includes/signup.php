@@ -9,7 +9,7 @@
       </ul>
 
       <div id="cd-login"> <!-- log in form -->
-        <form class="cd-form" action="regphp/validate.php" method="POST">
+        <form class="cd-form" action="regphp/validate.php" method="POST" onsubmit="return validateData();">
           <p class="fieldset">
             <label class="image-replace cd-email" for="signin-email">E-mail</label>
             <input class="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail">
@@ -32,7 +32,7 @@
       </div>
 
       <div id="cd-signup"> <!-- sign up form -->
-        <form class="cd-form" action="regphp/registration.php" method="POST">
+        <form class="cd-form" action="regphp/registration.php" method="POST" onsubmit="return validateData();">
           <p class="fieldset">
             <label class="image-replace cd-username" for="signup-username">Username</label>
             <input class="full-width has-padding has-border" id="signup-username" type="text" name="username" placeholder="Username">
@@ -44,13 +44,8 @@
           </p>
 
           <p class="fieldset">
-            <label class="image-replace cd-email" for="signup-email">College</label>
-            <select class="full-width has-padding has-border" id="signup-college" name="college">
-              <option value="" selected disabled hidden>Choose College</option>
-              <option value="VNIT">Visvesvaraya National Institute of Technology</option>
-              <option value="RKNEC">Shri Ramdeobaba College of Engineering and Management</option>
-              <option value="Other">Others</option>
-            </select>
+            <label class="image-replace cd-email" for="signup-email">Phone no.</label>
+            <input class="full-width has-padding has-border" id="signup-contact" type="tel" name="contact" placeholder="Phone no.">
           </p>
 
           <p class="fieldset">
