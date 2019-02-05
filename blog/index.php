@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require "../dbconnect/connect_to_book.php";
+  require "../dbconnect/connect_to_blog.php";
 ?>
 <!DOCTYPE html>
 <html>
