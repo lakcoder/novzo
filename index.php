@@ -14,6 +14,42 @@
 			<div class="row fullscreen d-flex align-items-center justify-content-center">
 				<div class="banner-content col-lg-8 col-md-12">
 					<h1 class="wow fadeIn" data-wow-duration="4s">The Archive Of Every Book <br> You Need</h1>
+					<div class="input-wrap">
+						<div class="form-box d-flex justify-content-between" style="border: 1px solid #000; radius:2px;">
+							<input id="search_books" type="text" placeholder="Search Books" class="form-control" name="search">
+							<button type="submit" class="btn ti-search"></button>
+						</div>
+						<div id="result"></div>
+						<script>
+                            $(document).ready(function(){
+                            	load_data();
+                            	function load_data(query)
+                            	{
+                            		$.ajax({
+                            			url:"regphp/search.php",
+                            			method:"POST",
+                            			data:{query:query},
+                            			success:function(data)
+                            			{
+                            				$('#result').html(data);
+                            			}
+                            		});
+                            	}
+
+                            	$('#search_books').keyup(function(){
+                            		var search = $(this).val();
+                            		if(search != '')
+                            		{
+                            			load_data(search);
+                            		}
+                            		else
+                            		{
+                            			load_data();
+                            		}
+                            	});
+                            });
+                        </script>
+					</div>
 					<div class="feature-inner row">
 						<div class="col-lg-4 col-md-12"><a href="buy.php">
 							<div class="feature-item">

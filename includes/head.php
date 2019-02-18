@@ -28,7 +28,6 @@
   <meta property="twitter:image:alt" content="">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -48,6 +47,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/nav.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131403091-1"></script>
