@@ -3,8 +3,8 @@
   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\Exception;
   session_start();
-//   error_reporting(E_ALL);
-//   ini_set('display_errors', '1');
+  error_reporting(E_ALL);
+  ini_set('display_errors', '1');
 if(isset($_POST['register'])){
   require "../dbconnect/connect_to_signups.php";
 //   header('location:../index.php');

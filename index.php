@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <?php include("includes/head.php");?>
-<body>
+<body id="body">
   <?php include("includes/header.php");?>
   <?php include("includes/signup.php") ?>
   <!-- Start Banner Area -->
@@ -76,17 +76,18 @@
 		</div>
 	</section>
 
-<section class="wrapperAll">
+<!-- <section class="wrapperAll">
   <section class="wrapper banner-content">
     <p style="color:black;">New Books</p>
   </section>
   <section class="sliderComplete">
     <section class="wrapper">
       <ul class="slider">
-          <?php require "dbconnect/connect_to_Books.php";
-                $query = "SELECT * FROM New_Books ORDER BY RAND() LIMIT 6";
-                $result = mysqli_query($con2,$query);
-                while($row = mysqli_fetch_array($result)){
+          <?php
+          // require "dbconnect/connect_to_Books.php";
+          //       $query = "SELECT * FROM New_Books ORDER BY RAND() LIMIT 6";
+          //       $result = mysqli_query($con2,$query);
+          //       while($row = mysqli_fetch_array($result)){
             ?>
         <li>
             <a class="align-items-center" href="product.php?Book_ID=<?php echo $row['Book_ID']; ?>" class="cover">
@@ -94,7 +95,7 @@
             </a>
             <a class="button" name="submit" href="product.php?Book_ID=<?php echo $row['Book_ID']; ?>">Buy Now</a>
         </li>
-        <?php } ?>
+        <?php  ?>
       </ul>
     </section>
   </section>
@@ -111,10 +112,11 @@
 <section class="sliderComplete">
     <section class="wrapper">
       <ul class="slider">
-        <?php   require "dbconnect/connect_to_Books.php";
-                $query = "SELECT * FROM Rent_Books ORDER BY RAND() LIMIT 6";
-                $result = mysqli_query($con2,$query);
-                while($row = mysqli_fetch_array($result)){
+        <?php
+        // require "dbconnect/connect_to_Books.php";
+        //         $query = "SELECT * FROM Rent_Books ORDER BY RAND() LIMIT 6";
+        //         $result = mysqli_query($con2,$query);
+        //         while($row = mysqli_fetch_array($result)){
             ?>
         <li>
             <a href="product.php?Book_ID=<?php echo $row['Book_ID']; ?>" class="cover">
@@ -122,7 +124,7 @@
             </a>
             <a class="button" name="submit" href="product.php?Book_ID=<?php echo $row['Book_ID']; ?>">Order Now</a>
         </li>
-        <?php } ?>
+        <?php  ?>
       </ul>
     </section>
 </section>
@@ -139,10 +141,11 @@
 <section class="sliderComplete">
     <section class="wrapper">
       <ul class="slider">
-        <?php   require "dbconnect/connect_to_Books.php";
-                $query = "SELECT * FROM Second_Hand_Books ORDER BY RAND() LIMIT 6";
-                $result = mysqli_query($con2,$query);
-                while($row = mysqli_fetch_array($result)){
+        <?php
+         // require "dbconnect/connect_to_Books.php";
+         //        $query = "SELECT * FROM Second_Hand_Books ORDER BY RAND() LIMIT 6";
+         //        $result = mysqli_query($con2,$query);
+         //        while($row = mysqli_fetch_array($result)){
             ?>
         <li>
             <a href="product.php?Book_ID=<?php echo $row['Book_ID']; ?>" class="cover">
@@ -150,14 +153,14 @@
             </a>
             <a class="button" name="submit" href="product.php?Book_ID=<?php echo $row['Book_ID']; ?>">Buy Now</a>
         </li>
-        <?php } ?>
+        <?php  ?>
       </ul>
     </section>
 </section>
 <section class="wrapper banner-content">
     <a href="buy.php" style="color:black;"><u>View More</u></a>
   </section>
-</section>
+</section> -->
 
   <section class="wrapperAll" style="background:#b4e1ea;">
     <section class="wrapper banner-content">
