@@ -24,39 +24,34 @@
   <meta property="twitter:description" content="">
   <meta property="twitter:creator" content="">
   <meta property="twitter:url" content="https://novzo.in">
-  <meta property="twitter:image" content="img/logos/tt2.png">
+  <meta property="twitter:image" content="../img/logos/tt2.png">
   <meta property="twitter:image:alt" content="">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/linearicons.css">
-  <link rel="stylesheet" href="css/slider.css">
-  <link rel="stylesheet" href="css/form.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/nice-select.css">
-  <link rel="stylesheet" href="css/normalize.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/cart.css">
-  <link rel="stylesheet" href="css/checkout.css">
-<<<<<<< HEAD
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/custom.css">
-
-=======
-	<link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/linearicons.css">
+  <link rel="stylesheet" href="../css/slider.css">
+  <link rel="stylesheet" href="../css/form.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/nice-select.css">
+  <link rel="stylesheet" href="../css/normalize.min.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cart.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+	<link rel="stylesheet" href="../css/nav.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css'>
 		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
->>>>>>> yogesh
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131403091-1"></script>
 <script>
