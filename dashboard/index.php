@@ -2,6 +2,7 @@
   session_start();
   $pageTitle = 'Dasboard';
 ?>
+<<<<<<< HEAD
 <html lang="en" class="no-js">
 <?php include("head.php");?>
 <body>
@@ -37,4 +38,15 @@
   </div>
 
 </body>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+>>>>>>> f2d4265560e391c2d30b88d3419dff722cda5f16
 </html>

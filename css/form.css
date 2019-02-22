@@ -272,10 +272,10 @@ a.button:hover{
   transition: 0.4s;
 }
 
-.active, .accordion:hover {
+/* .active, .accordion:hover {
   color: #000;
   padding-bottom:100em;
-}
+} */
 
 .panel {
   padding: 0 18px;

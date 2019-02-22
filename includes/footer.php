@@ -60,16 +60,18 @@ This website is designed and developed by |<a href="https://www.linkedin.com/in/
 </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>-->
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script type="text/javascript" src="js/style.js"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/form.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animate.js"></script>
   <script src="js/easing.min.js"></script>
   <script src="js/hoverIntent.js"></script>
   <script src="js/superfish.min.js"></script>
@@ -86,4 +88,6 @@ This website is designed and developed by |<a href="https://www.linkedin.com/in/
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
   <script type="text/javascript" src="js/components/header-sticky.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </html>
