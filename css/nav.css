@@ -4,12 +4,53 @@
 }
 
 .row2{
-    padding-top: 10px;
+    padding-top: 5px;
+}
+
+.login-container {
+  position: relative;
+}
+
+.login-form {
+  display: none;
+  z-index: 3000;
+  position: absolute;
+  padding: 20px;
+  margin-top: 10px;
+  width: 200%;
+  background: #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 0 darken(#ddd, 5%);
+}
+.login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    background: #f1f1f1;
+    font-weight: 300;
+    font-style: italic;
+    border-radius: 2px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+.login-form input[type="submit"] {
+    color: #FFF;
+    background: #1BBC9B;
+    font-style: normal;
+    box-shadow: 0 4px 0 darken(#1BBC9B, 5%);
+  }
+
+.open {
+  /* @include animation(slide 1s); */
+  display: block;
 }
 
 .row1 {
-    padding-top: 10px;
-	margin-bottom:24px;
+    padding-top: 5px;
+	margin-bottom: 8px;
 }
 
 .flipkart-navbar-input {

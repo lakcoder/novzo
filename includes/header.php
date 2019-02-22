@@ -9,9 +9,6 @@
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css'>
 		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
-		<link rel="stylesheet" href="css/nav.css">
-
 
 </head>
 
@@ -30,9 +27,9 @@
                 <div class="row">
                     <select class="full-width has-padding has-border col-xs-1" id="type" name="type" required>
                       <option value="" selected="" disabled="" hidden="">Books</option>
-                      <option value="Books">Rent</option>
-                      <option value="New">New Book</option>
-                      <option value="Second_Hand">Second Hand</option>
+                      <option value="Books">Books</option>
+                      <option value="New">Posts</option>
+                      <!-- <option value="Second_Hand">Second Hand</option> -->
                     </select>
                     <input class="flipkart-navbar-input col-xs-10" type="" placeholder="Search" name="" />
                     <button type="submit" class=" ti-search flipkart-navbar-button col-xs-1">
@@ -44,11 +41,22 @@
               </form>
             </div>
             <div class="cart largenav col-sm-2">
-                <a class="ti-shopping-cart cart-button">
+                <a class=" cart-button">
                     <!-- <svg class="cart-svg " width="16 " height="16 " viewBox="0 0 16 16 ">
                         <path d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86 " fill="#fff "></path>
                     </svg>  -->
-                    <span class="item-number ">0</span>
+                    <span id="login-button" class="item-number">Login</span>
+                    <div class="login-container">
+                      <form id="login-form" class="login-form">
+                        <input type="text" placeholder="Username">
+                        <input type="password" placeholder="Password">
+                        <input type="submit" value="SUBMIT" />
+                        <!-- <a href="register.php">Not registered?</a> -->
+                      </form>
+                      <script type="text/javascript">
+
+                      </script>
+                    </div>
                 </a>
             </div>
         </div>
@@ -72,7 +80,7 @@
 				<li class="upper-links">
                     <a class="links" href="http://clashhacks.in/">
                         <svg class="" width="16px" height="12px" style="overflow: visible;">
-                            <path d="M8.037 17.546c1.487 0 2.417-.93 2.417-2.417H5.62c0 1.486.93 2.415 2.417 2.415m5.315-6.463v-2.97h-.005c-.044-3.266-1.67-5.46-4.337-5.98v-.81C9.01.622 8.436.05 7.735.05 7.033.05 6.46.624 6.46 1.325v.808c-2.667.52-4.294 2.716-4.338 5.98h-.005v2.972l-1.843 1.42v1.376h14.92v-1.375l-1.842-1.42z" fill="#fff"></path>
+                            <span class="ti-shopping-cart"></span><!-- <path d="M8.037 17.546c1.487 0 2.417-.93 2.417-2.417H5.62c0 1.486.93 2.415 2.417 2.415m5.315-6.463v-2.97h-.005c-.044-3.266-1.67-5.46-4.337-5.98v-.81C9.01.622 8.436.05 7.735.05 7.033.05 6.46.624 6.46 1.325v.808c-2.667.52-4.294 2.716-4.338 5.98h-.005v2.972l-1.843 1.42v1.376h14.92v-1.375l-1.842-1.42z" fill="#fff"></path> -->
                         </svg>
                     </a>
                 </li>
@@ -90,12 +98,6 @@
     <a href="http://clashhacks.in/">Link</a>
     <a href="http://clashhacks.in/">Link</a>
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
-
-
-    <script  src="js/nav.js"></script>
-
 
 
 

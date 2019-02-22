@@ -1,30 +1,3 @@
-<?php
-  session_start();
-  require "dbconnect/connect_to_chat.php";
-  $email1 = $_SESSION['email'];
-  // $email2 = x;
-
-  if($con_chat->real_escape_string($_POST['chat'])){
-    $email2 = $con_chat->real_escape_string($_POST['chat']);
-    $query1 = "CREATE TABLE IF NOT EXISTS $email1(
-      ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      Name VARCHAR(255) NOT NULL,
-      msg VARCHAR(255) NOT NULL,
-      sender VARCHAR(255) DEFAULT NULL,
-      send_time DateTime
-    )";
-    mysqli_query($con_chat,$query1);
-
-    $query2 = "CREATE TABLE IF NOT EXISTS $email2(
-      ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      Name VARCHAR(255) NOT NULL,
-      msg VARCHAR(255) NOT NULL,
-      sender VARCHAR(255) DEFAULT NULL,
-      send_time DateTime
-    )";
-    mysqli_query($con_chat,$query2);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,32 +17,123 @@
 <body>
 
     <div class="container clearfix">
-      <div class="people-list" id="people-list">
-        <div class="search">
-          <input type="text" placeholder="search" />
-          <i class="fa fa-search"></i>
-        </div>
-        <ul class="list">
-          <?php
-          $query = "SELECT * FROM $emai2";
-          $result = mysqli_query($con_chat,$query);
-          while($row = mysqli_fetch_array($result)){ ?>
-          <a href="#<?php echo $row[]; ?>">
-            <li class="clearfix">
-              <img src="img/users/<?php echo $row['Name']; ?>.jpg" alt="<?php echo $_SESSION['name'] . 'avatar'; ?>" />
-              <div class="about">
-                <div class="name"><?php echo $row['Name']; ?></div>
-                <div class="status">
-                  <i class="fa fa-circle online"></i> online
-                </div>
-              </div>
-            </li>
-          </a>
-          <?php } ?>
-        </ul>
+    <div class="people-list" id="people-list">
+      <div class="search">
+        <input type="text" placeholder="search" />
+        <i class="fa fa-search"></i>
       </div>
+      <ul class="list">
+        <a href="">
+          <li class="clearfix">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+            <div class="about">
+              <div class="name">Aiden Chavez</div>
+              <div class="status">
+                <i class="fa fa-circle offline"></i> left 7 mins ago
+              </div>
+            </div>
+          </li>
+        </a>
 
-    <div id="chat" class="chat">
+        <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Mike Thomas</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        </a>
+
+        <a href="">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_04.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Erica Hughes</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+          <li class="clearfix">
+        </li>
+      </a>
+
+      <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_05.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Ginger Johnston</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+      </a>
+
+      <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_06.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Tracy Carpenter</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> left 30 mins ago
+            </div>
+          </div>
+        </li>
+      </a>
+
+      <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_07.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Christian Kelly</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> left 10 hours ago
+            </div>
+          </div>
+        </li>
+      </a>
+
+      <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_08.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Monica Ward</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+      </a>
+
+      <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_09.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Dean Henry</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> offline since Oct 28
+            </div>
+          </div>
+        </li>
+      </a>
+
+      <a href="">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Peyton Mckinney</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+      </a>
+      </ul>
+    </div>
+
+    <div class="chat">
       <div class="chat-header clearfix">
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
 
@@ -189,7 +253,3 @@
 </body>
 
 </html>
-<?php }
-  }else{
-  header('location:index.php');
-} ?>

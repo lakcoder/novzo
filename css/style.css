@@ -714,6 +714,9 @@ xsigin/signup popup
   display: block;
 }
 
+#login, #reset{
+	display: none;
+}
 
 /* #homebg{
 
