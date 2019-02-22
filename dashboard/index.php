@@ -2,7 +2,6 @@
   session_start();
   $pageTitle = 'Dasboard';
 ?>
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,5 +47,19 @@
   </div>
 
 </body>
+<<<<<<< HEAD
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+>>>>>>> f2d4265560e391c2d30b88d3419dff722cda5f16
+=======
 >>>>>>> yogesh
+>>>>>>> 3023736b6f3723f73d22d938b5f2553e3137ed06
 </html>

@@ -47,16 +47,11 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/checkout.css">
-<<<<<<< HEAD
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/custom.css">
-
-=======
 	<link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/custom.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css'>
 		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
->>>>>>> yogesh
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131403091-1"></script>
 <script>

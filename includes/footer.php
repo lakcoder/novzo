@@ -88,4 +88,6 @@ This website is designed and developed by |<a href="https://www.linkedin.com/in/
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
   <script type="text/javascript" src="js/components/header-sticky.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </html>
