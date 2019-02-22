@@ -48,6 +48,7 @@
   <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/checkout.css">
   <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131403091-1"></script>
