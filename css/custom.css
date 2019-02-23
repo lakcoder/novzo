@@ -91,3 +91,8 @@ div#features figure figcaption {
 }
 
  #more {display: none;}
+
+ .verticalLine {
+	 padding-left: 30px; 
+   border-right: solid #000000;
+ }
