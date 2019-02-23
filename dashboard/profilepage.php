@@ -9,9 +9,9 @@
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
 
-      <link rel="stylesheet" href="css/profilepage.css">
+      <link rel="stylesheet" href="../css/profilepage.css">
 
-  
+
 </head>
 
 <body>
@@ -23,8 +23,8 @@
 			<div>
 				<div class="row grid clearfix">
 					<div class="col2 first">
-						<img src="http://images.contactmusic.com/newsimages/david_beckham_1133321.jpg" alt="">
-						<h1>david beckham</h1>
+						<img src="http://images.contactmusic.com/newsimages/david_beckham_1133321.jpg" alt="" style="text-align:center" />
+						<p><b>david beckham</b></h1>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
 						<span>Follow</span>
 					</div>
@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<span class="smalltri">
-				
+
 			<i class="fa fa-star"></i>
 			</span>
 		</section>
@@ -87,12 +87,12 @@
 			</div>
 		</section>
 	</div>
-</div>	
+</div>
 </body>
-  
-  
 
-    <script  src="js/profilepage.js"></script>
+
+
+    <script  src="../js/profilepage.js"></script>
 
 
 
