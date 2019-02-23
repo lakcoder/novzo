@@ -59,7 +59,9 @@ This website is designed and developed by |<a href="https://www.linkedin.com/in/
   <a title="Go to Top" href="#"></a>
 </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -72,22 +74,20 @@ This website is designed and developed by |<a href="https://www.linkedin.com/in/
   <script src="js/form.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/animate.js"></script>
-  <script src="js/easing.min.js"></script>
-  <script src="js/hoverIntent.js"></script>
-  <script src="js/superfish.min.js"></script>
+  <!-- <script src="js/easing.min.js"></script> -->
+  <!-- <script src="js/hoverIntent.js"></script> -->
+  <!-- <script src="js/superfish.min.js"></script> -->
   <script src="js/jquery.ajaxchimp.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/owl-carousel-thumb.min.js"></script>
+  <!-- <script src="js/owl.carousel.min.js"></script> -->
+  <!-- <script src="js/owl-carousel-thumb.min.js"></script> -->
   <script src="js/jquery.sticky.js"></script>
   <script src="js/jquery.nice-select.min.js"></script>
-  <script src="js/parallax.min.js"></script>
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <script src="js/mail-script.js"></script>
+  <!-- <script src="js/parallax.min.js"></script> -->
+  <!-- <script src="js/waypoints.min.js"></script> -->
+  <!-- <script src="js/wow.min.js"></script> -->
+  <!-- <script src="js/jquery.counterup.min.js"></script> -->
+  <!-- <script src="js/mail-script.js"></script> -->
   <script src="js/main.js"></script>
   <script type="text/javascript" src="js/components/header-sticky.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </html>
