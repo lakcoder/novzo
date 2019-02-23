@@ -92,6 +92,8 @@ div#features figure figcaption {
 
  #more {display: none;}
 
+/*Landing page blocks*/
+
 .block-container {
   position: relative;
   width: 50%;
@@ -101,7 +103,7 @@ div#features figure figcaption {
   display: block;
   width: 100%;
   height: auto;
-	box-shadow:box-shadow: 5px 5px 8px black;
+	box-shadow:5px 5px 8px black;
 }
 
 .block-overlay {
@@ -115,7 +117,7 @@ div#features figure figcaption {
   opacity: 0;
   transition: .5s ease;
   background-color: #fff;
-	padding:3px;
+
 }
 
 .block-container:hover .block-overlay {

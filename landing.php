@@ -45,7 +45,7 @@
 <section>
   <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 col-6 mx-auto mx-5 my-5" style="width:20%">
+    <div class="col-md-3 col-6 mx-auto">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-6 mx-auto mx-5 my-5" style="width:20%">
+    <div class="col-md-3 col-6 mx-auto">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-6 mx-auto mx-5 my-5" style="width:20%">
+    <div class="col-md-3 col-6 mx-auto">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-6 mx-auto mx-5 my-5" style="width:20%">
+    <div class="col-md-3 col-6 mx-auto">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
