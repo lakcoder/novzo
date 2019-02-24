@@ -15,7 +15,7 @@
               <form>
                 <div class="row">
                     <select class="full-width has-padding has-border col-xs-1" id="type" name="type" required>
-                      <option value="" selected="" disabled="" hidden="">Books</option>
+                      <!-- <option value="" selected="" disabled="" hidden="">Books</option> -->
                       <option value="Books">Books</option>
                       <option value="New">Posts</option>
                       <!-- <option value="Second_Hand">Second Hand</option> -->
@@ -39,7 +39,7 @@
                       <form id="login-form" class="login-form">
                         <input type="text" placeholder="Username">
                         <input type="password" placeholder="Password">
-                        <input type="submit" value="SUBMIT" />
+                        <input type="submit" value="SUBMIT" style="width:100%" />
                         <!-- <a href="register.php">Not registered?</a> -->
                       </form>
                       <script type="text/javascript">
