@@ -187,3 +187,11 @@ function readmore4() {
     moreText4.style.display = "inline";
   }
 }
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
