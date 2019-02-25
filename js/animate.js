@@ -73,10 +73,45 @@ $('#login-button').click(function() {
 });
 
 $("#clogin").click(function() {
-  $('#clogin').css({"display":"block"});
-  $("#clogin").animate({opacity: 1}, 1000);
+  $('#login').css({"display":"block"});
+  $("#login").animate({opacity: 1}, 1000);
+  var a = $("#login").offset().top;
+  $("html ,body").animate({ scrollTop: a},800);
   $('#reset').css({"display":"none"});
   $("#reset").animate({opacity: 0}, 1000);
+  $('#signup').css({"display":"none"});
+  $("#signup").animate({opacity: 0}, 1000);
+});
+
+$("#glogin").click(function() {
+  $('#login').css({"display":"block"});
+  $("#login").animate({opacity: 1}, 1000);
+  var b = $("#login").offset().top;
+  $("html ,body").animate({ scrollTop: b},800);
+  $('#reset').css({"display":"none"});
+  $("#reset").animate({opacity: 0}, 1000);
+  $('#signup').css({"display":"none"});
+  $("#signup").animate({opacity: 0}, 1000);
+});
+
+$("#cregister").click(function() {
+  $('#login').css({"display":"none"});
+  $("#login").animate({opacity: 0}, 1000);
+  $('#reset').css({"display":"none"});
+  $("#reset").animate({opacity: 0}, 1000);
+  $('#signup').css({"display":"block"});
+  $("#signup").animate({opacity: 1}, 1000);
+  var c = $("#signup").offset().top;
+  $("html ,body").animate({ scrollTop: c},800);
+});
+
+$("#cforgot").click(function() {
+  $('#login').css({"display":"none"});
+  $("#login").animate({opacity: 0}, 1000);
+  $('#reset').css({"display":"block"});
+  $("#reset").animate({opacity: 1}, 1000);
+  var d = $("#Round3").offset().top;
+  $("html ,body").animate({ scrollTop: d},800);
   $('#signup').css({"display":"none"});
   $("#signup").animate({opacity: 0}, 1000);
 });
