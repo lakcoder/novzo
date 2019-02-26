@@ -23,7 +23,7 @@
       $result = mysqli_query($con_signups,$query);
       $num = mysqli_num_rows($result);
 
-      if($num != 0){
+      if($num == 1){
         $msg = "The email you entered is already registered.";
       }else{
         $token = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789!$^*';
@@ -32,11 +32,20 @@
 
         $q="INSERT INTO Registrations(Name,Email,Contact,Password,Token,Confirmed) VALUES('$name','$email','$contact','$hashed_password','$token','0')";
         // $query = "INSERT INTO Users(Contact,Email) VALUES('$contact','$email')";
-        if(mysqli_query($con_signups ,$q)){
+        $registered = mysqli_query($con_signups ,$q);
+        $q2 = "SELECT * FROM Registrations WHERE Email = '$email'";
+        $res = mysqli_query($con_signups,$q2);
+        $num = mysqli_num_rows($res);
+        if($num == 1){
+          $row = mysqli_fetch_array($res);
+          $id = $row['ID'];
+          $q3 = "INSERT INTO Genres(UserID,Email) VALUES('$id','$email')";
+          if($registered && mysqli_query($con_signups, $q3)){
             $msgr1 = "You are registered with us!";
-        }
-        else {
+          }
+          else {
             $msgr1 = "There was some error. Contact: 7738446941.";
+          }
         }
 
         require 'vendor/autoload.php';
@@ -59,60 +68,60 @@
           $mail->isHTML (TRUE);
           $mail->Body = '
           <!DOCTYPE html>
-              <html>
-                  <head>
-                      <style>
-                          li{
-                              padding:10px;
-                          }
-                          p{
-                              font-size:16px;
-                          }
+          <html>
+              <head>
+                  <style>
+                      li{
+                          padding:10px;
+                      }
+                      p{
+                          font-size:16px;
+                      }
 
-                          *{
-                              font-family:Helvetica,Arial,sans-serif;
-                          }
+                      *{
+                          font-family:Helvetica,Arial,sans-serif;
+                      }
 
-                          h2{
-                              text-align: center;
-                              margin-top: 100px;
-                          }
-                          html, body{
-                              background-color:#d3dde8;
-                              margin: 0;
-                          }
-                          .context {
-                              font-size: 12px;
-                              padding: 40px 60px;
-                              margin-left:10%;
-                              margin-right: 10%;
-                          }
+                      h2{
+                          text-align: center;
+                          margin-top: 80px;
+                      }
+                      html, body{
+                          background-color:#d3dde8;
+                          margin: 0;
+                      }
+                      .context {
+                          font-size: 12px;
+                          padding: 40px 60px;
+                          margin-left:10%;
+                          margin-right: 10%;
+                      }
 
-                          .context p{
-                              font-size: 12px;
-                          }
-                          p{
-                              margin: 15px 0px;
-                          }
+                      .context p{
+                          font-size: 12px;
+                      }
+                      p{
+                          margin: 15px 0px;
+                      }
 
-                      </style>
-                  </head>
-                  <body>
-                      <div style="background: #0b0b0b; padding:10px 30px;"><img src="https://www.novzo.in/img/logos/tt2.png"></div>
-                      <h2 style="font-size:22px;">Welcome to Novzo</h2><br>
-                      <div class="context">
-                          <h3><b>Hello '.$name.',</b></h3>
-                          <div>
-                              <p>We hope this mail finds you in the best of your health and cheerful spirits. We are pleased to have you on board with us.<br/><br/>
-                              To verify your Email: <b>'.$email.'</b>, click <strong><a href="https://novzo.in/regphp/confirm.php?email=' . $email . '&token=' . $token . '">Click here</a></strong><br/> OR <br/> paste this url on your browser: https://novzo.in/regphp/confirm.php?email=' . $email . '&token=' . $token . '</p>
-                          </div>
-                          <p>
-                          Regards,<br>
-                          Support, Novzo
-                          </p>
+                  </style>
+              </head>
+              <body>
+                  <div style="background: #fff; padding:10px 30px;"><img height="55.76" width ="100" alt="Novzo" src="https://www.novzo.in/img/logos/tt2.png"></div>
+                  <h2 style="font-size:22px;">Welcome to Novzo</h2><br>
+                  <div class="context">
+                      <h3><b>Hello '.$name.',</b></h3>
+                      <div>
+                          <p>We hope this mail finds you in the best of your health and cheerful spirits. We are pleased to have you on board with us.<br/><br/>
+                          To verify your Email:'.$email.', click <strong><a href="https://novzo.in/regphp/confirm.php?email=' . $email . '&token=' . $token . '">Click here</a></strong><br/> OR <br/> paste this url on your browser: https://novzo.in/regphp/confirm.php?email=' . $email . '&token=' . $token . '</p>
                       </div>
-                  </body>
-              </html>
+                      <p>
+                      Regards,<br>
+                      Support, Novzo
+                      </p>
+                  </div>
+              </body>
+          </html>
           ';
           if($mail->send()) {
               $msgr2 = "An email has been sent to you. Please verify your email.";
