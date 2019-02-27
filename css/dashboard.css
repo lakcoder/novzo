@@ -1,0 +1,26 @@
+.db-feed{
+  border 1px solid black;
+  box-shadow:0px 0px 8px black;
+  border-radius: 10px;
+  padding:5px;
+  margin-top:30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #fff;
+}
+
+.db-media-image{
+  margin-top:10px;
+  margin-left:10px;
+  border-radius: 20px;
+  border-image-outset: 10px;
+  border:2px solid grey;
+}
+
+.db-media-heading{
+  border-radius: 10px;
+  padding:4px;
+  background-color: grey;
+  background-color: #1234564f
+}
