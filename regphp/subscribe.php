@@ -1,23 +1,23 @@
 <?php
 require "../dbconnect/connect_to_signups.php";
 
-$email = $con->real_escape_string($_POST['email']);
+$email = $con_signups->real_escape_string($_POST['email']);
 if(isset($_POST['submit'])){
-if($email==""){
+  if($email==""){
     $msg = "Please enter your email id";
   }else{
     $query = "SELECT * FROM Subscriptions WHERE Email='$email'";
-    $result = mysqli_query($con,$query);
+    $result = mysqli_query($con_signups,$query);
     $num = mysqli_num_rows($result);
 
-    if($num!=0){
+    if($num != 0){
       $msg = "You have already subscribed us. Stay Tuned!";
     }else{
       $q = "INSERT INTO Subscriptions(Email) VALUES('$email')";
       if(mysqli_query($con,$q)){
-          $msg = "Thank You for subscribing!";
+        $msg = "Thank You for subscribing!";
       }else{
-          $msg = "Can't Add your email.";
+        $msg = "Can't Add your email.";
       }
     }
   }
@@ -131,7 +131,7 @@ if($email==""){
 
 });
 	</script>
-    
+
     <section class="relative">
   <div class="cd-user-modal" style="padding-top:2em;"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -223,7 +223,7 @@ if($email==""){
     </div> <!-- cd-user-modal-container -->
   </div> <!-- cd-user-modal -->
 </section>
-    
+
   <section class="contact-page-area relative" style="padding-top:7em;padding-bottom:7em;">
     <div class="container cart-container">
     <div class="box">

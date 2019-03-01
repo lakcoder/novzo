@@ -7,6 +7,8 @@
 
   $pageTitle = 'Register';
 
+  // REGISTRATION
+
   if(isset($_POST['register'])){
     require "dbconnect/connect_to_signups.php";
 
@@ -15,7 +17,7 @@
     $contact = $con_signups->real_escape_string($_POST['contact']);
     $password = $con_signups->real_escape_string($_POST['password']);
     if($name=="" || $email=="" || $contact=="" || $password==""){
-        $msgr1 = "Please fill all the details";
+        $msg1 = "Please fill all the details";
     }else{
       $hashed_password = $con_signups->real_escape_string(password_hash($password, PASSWORD_DEFAULT));
 
@@ -24,7 +26,7 @@
       $num = mysqli_num_rows($result);
 
       if($num == 1){
-        $msg = "The email you entered is already registered.";
+        $msg1 = "The email you entered is already registered.";
       }else{
         $token = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789!$^*';
         $token = str_shuffle($token);
@@ -41,10 +43,10 @@
           $id = $row['ID'];
           $q3 = "INSERT INTO Genres(UserID,Email) VALUES('$id','$email')";
           if($registered && mysqli_query($con_signups, $q3)){
-            $msgr1 = "You are registered with us!";
+            $msg1 = "You are registered with us!";
           }
           else {
-            $msgr1 = "There was some error. Contact: 7738446941.";
+            $msg1 = "There was some error. Contact: 7738446941.";
           }
         }
 
@@ -124,11 +126,11 @@
           </html>
           ';
           if($mail->send()) {
-              $msgr2 = "An email has been sent to you. Please verify your email.";
+              $msg2 = "An email has been sent to you. Please verify your email.";
               $msg2 = "As this is a new venture, our email may go in spam. Please mark it 'Not Spam' and click on the verification link to complete your registration.<br><br> We regret any inconvience.";
           }
           else {
-              $msgr2 = "Something Went Wrong. Please Try Again.";
+              $msg2 = "Something Went Wrong. Please Try Again.";
           }
         }
         catch (Exception $e)
@@ -142,6 +144,49 @@
       }
     }
   }
+
+  //
+
+  // Login
+
+  if(isset($_POST['login'])){
+    require "dbconnect/connect_to_signups.php";
+    $email = $con_signups->real_escape_string($_POST['email']);
+    $password = $con_signups->real_escape_string($_POST['password']);
+    if($email=="" || $password==""){
+      $msg1 =  "Please fill all the details";
+    }else{
+      $query = "SELECT * FROM Registrations WHERE Email='$email'";
+      $result = mysqli_query($con_signups,$query);
+
+      $num = mysqli_num_rows($result);
+
+      if($num>0){
+        $data = mysqli_fetch_array($result);
+        $name = $data['Name'];
+        $contact = $data['Contact'];
+        if(password_verify($password,$data['Password'])){
+            if($data['Confirmed'] == 0){
+              $msg1 = "Please verify your email. Check your inbox.";
+            } else {
+                $_SESSION['email'] = $email;
+                $_SESSION['name'] = $name;
+                $_SESSION['contact'] = $contact;
+                header('location:dashboard/');
+            }
+        } else {
+            $msg1 = "Please recheck your inputs";
+        }
+      }else{
+        $msg1 = "Your email isn't registered with us.";
+      }
+    }
+  }
+
+//
+
+// Confirm Email
+
 ?>
 <html>
 <?php include("includes/head.php");?>
@@ -152,14 +197,14 @@
     <div class="container cart-container">
     <div class="box">
       <div class="container">
+        <h3 class="wrapper banner-content"><?php echo $msg1 ?></h3>
+        <h3 class="wrapper banner-content"><?php echo $msg2 ?></h3>
           <div class="row row-centered" style=" background-color: #e8e87e;">
           <section class="wrapper banner-content" style="padding-top:20px;">
             <p style="color:black">Register Now</p>
             <h3 class="wrapper banner-content">Create an account to avail our services.</h3>
-            <h3 class="wrapper banner-content"><?php echo $msgr1 ?></h3>
-            <h3 class="wrapper banner-content"><?php echo $msgr2 ?></h3>
             <div id="login"> <!-- log in form -->
-              <form class="cd-form" action="regphp/validate.php" method="POST">
+              <form class="cd-form" action="register.php" method="POST">
                 <p class="fieldset">
                   <label class="image-replace cd-email" for="signin-email">E-mail</label>
                   <input class="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail">
@@ -170,8 +215,6 @@
                   <input class="full-width has-padding has-border" id="signin-password" type="password" name="password"  placeholder="Password">
                   <a href="#0" class="hide-password">Show</a>
                 </p>
-
-                <?php echo $msgv; ?>
 
                 <p class="fieldset">
                   <input class="full-width" type="submit" value="Login" name="login">

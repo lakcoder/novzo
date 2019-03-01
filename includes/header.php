@@ -36,15 +36,12 @@
                     </svg>  -->
                     <span id="login-button" class="item-number">Login</span>
                     <div class="login-container">
-                      <form id="login-form" class="login-form">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
-                        <input type="submit" value="SUBMIT" style="width:100%" />
+                      <form action="regphp/validate.php" id="login-form" class="login-form">
+                        <input type="text" placeholder="Email" name="email">
+                        <input type="password" placeholder="Password" name="password">
+                        <input type="submit" value="SUBMIT" name="login" style="width:100%" />
                         <!-- <a href="register.php">Not registered?</a> -->
                       </form>
-                      <script type="text/javascript">
-
-                      </script>
                     </div>
                 </a>
             </div>

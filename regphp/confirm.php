@@ -6,15 +6,14 @@
         header('location:index.php');
     } else {
 
-        $email = $con->real_escape_string($_GET['email']);
-        $token = $con->real_escape_string($_GET['token']);
-        $query = "SELECT ID FROM Registrations WHERE email='$email' AND token='$token' AND ConfirmEmail=0";
-        $result = mysqli_query($con,$query);
+        $email = $con_signups->real_escape_string($_GET['email']);
+        $token = $con_signups->real_escape_string($_GET['token']);
+        $query = "SELECT ID FROM Registrations WHERE email='$email' AND token='$token' AND Confirmed = 0";
+        $result = mysqli_query($con_signups,$query);
         $num = mysqli_num_rows($result);
 
         if($num>0){
-            $q = "UPDATE Registrations SET ConfirmEmail=1, token='' WHERE email='$email'";
-            $query = "INSERT INTO Sales(Email) VALUES('$email') ";
+            $q = "UPDATE Registrations SET Confirmed = 1, token = '' WHERE Email = '$email'";
             mysqli_query($con,$q);
             $msg = "Your email has been verified!";
             $msg2 = " You can now login to avail our services.";
@@ -132,7 +131,7 @@
 });
 
 	</script>
-	
+
 	<section class="relative">
   <div class="cd-user-modal" style="padding-top:2em;"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->

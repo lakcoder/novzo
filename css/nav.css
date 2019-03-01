@@ -30,7 +30,7 @@
     outline: 0;
     background: #f1f1f1;
     font-weight: 300;
-    font-style: italic;
+    /* font-style: italic; */
     border-radius: 2px;
     &:last-child {
       margin-bottom: 0;

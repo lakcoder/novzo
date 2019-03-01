@@ -3,8 +3,8 @@
   if (!isset($_GET['reset_email']) || !isset($_GET['token'])){
     echo "Your request is invalid.";
   } else {
-    $reset_email = $con->real_escape_string($_GET['reset_email']);
-    $token = $con->real_escape_string($_GET['token']);
+    $reset_email = $con_signups->real_escape_string($_GET['reset_email']);
+    $token = $con_signups->real_escape_string($_GET['token']);
     $_SESSION[ 'display_passstatus' ] = TRUE;
 ?>
 
@@ -115,7 +115,7 @@
 
 });
 	</script>
-    
+
     <section class="relative">
   <div class="cd-user-modal" style="padding-top:2em;"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -222,12 +222,12 @@
                     <label>New Password: </label>
                     <input class="full-width has-padding has-border" id="new-password" type="password" name="npassword"  placeholder="New Password"><br/><br/>
                   </span>
-          
+
                   <span>
                     <label>Confirm Password: </label>
                     <input class="full-width has-padding has-border" id="confirm-password" type="password" name="cpassword"  placeholder="Confirm Password">
                   </span>
-          
+
                   <input type="hidden" value="<?php echo "$token" ?>" name="token">
                   <input type="hidden" value="<?php echo "$reset_email" ?>" name="reset_email">
 
@@ -334,4 +334,3 @@
 <?php
   }
  ?>
-
