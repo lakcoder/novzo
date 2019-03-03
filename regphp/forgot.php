@@ -2,23 +2,26 @@
   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\Exception;
   session_start();
-  
+
   if(isset($_POST['reset_email'])){
   require "../dbconnect/connect_to_signups.php";
 
-  $reset_email = $con->real_escape_string($_POST['reset_email']);
+  $reset_email = $con_signups->real_escape_string($_POST['reset_email']);
 
   if($reset_email==""){
     $msg = "Please enter your email id.";
   } else{
 
-    $query= "SELECT * FROM Registrations WHERE Email = '$reset_email'";
-    $result = mysqli_query($con,$query);
+    $query = "SELECT * FROM Registrations WHERE Email = '$reset_email'";
+    $result = mysqli_query($con_signups,$query);
     $num = mysqli_num_rows($result);
 
-    if($num==0){
+    if($num == 0){
       $msg = "This email id is not registered with us.";
     } else{
+      $data = mysqli_fetch_array($result);
+      $name = $data['Name'];
+      $contact = $data['Contact'];
 
       $token = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789!@$^*_';
       $token = str_shuffle($token);
@@ -29,25 +32,83 @@
       $mail = new PHPMailer(TRUE);
 
       try {
-         $mail->setFrom('office@novzo.in', 'Novzo');
-         $mail->addAddress($reset_email);
-         $mail->Subject = 'Password Reset';
-         $mail->isHTML (TRUE);
-         $mail->Body = '
-              <html>
-                  <body>
-                      <h2>Hi User!</h2>
-                      <p><strong><a href="https://novzo.in/regphp/passreset.php?reset_email='. $reset_email .'&token=' . $token . '">Click here</a></strong> or follow the link to reset your password:</p><br>
-                      <p>https://novzo.in/regphp/passreset.php?reset_email='. $reset_email .'&token=' . $token . '</p>
-                  </body>
-              </html>
-         ';
-          if($mail->send()){
-              $msg = "An email has been sent to you. Please verify your email.";
-          }
-          else {
-              $msg = "Something Went Wrong. Please Try Again.";
-          }
+
+        //Server settings
+        $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = 'contactnovzo@gmail.com';           // SMTP username
+        $mail->Password = 'Novzoin@novzo';                    // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
+        $mail->setFrom('contactnovzo@gmail.com', 'Novzo');
+        $mail->addAddress($email, $name);
+        $mail->Subject = 'Welcome to Novzo';
+        $mail->isHTML (TRUE);
+        $mail->Body = '
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <style>
+                    li{
+                        padding:10px;
+                    }
+                    p{
+                        font-size:16px;
+                    }
+
+                    *{
+                        font-family:Helvetica,Arial,sans-serif;
+                    }
+
+                    h2{
+                        text-align: center;
+                        margin-top: 80px;
+                    }
+                    html, body{
+                        background-color:#d3dde8;
+                        margin: 0;
+                    }
+                    .context {
+                        font-size: 12px;
+                        padding: 40px 60px;
+                        margin-left:10%;
+                        margin-right: 10%;
+                    }
+
+                    .context p{
+                        font-size: 12px;
+                    }
+                    p{
+                        margin: 15px 0px;
+                    }
+
+                </style>
+            </head>
+            <body>
+                <div style="background: #fff; padding:10px 30px;"><img height="55.76" width ="100" alt="Novzo" src="https://www.novzo.in/img/logos/tt2.png"></div>
+                <h2 style="font-size:22px;">Welcome to Novzo</h2><br>
+                <div class="context">
+                    <h3><b>Hello '.$name.',</b></h3>
+                    <h2>Hi User!</h2>
+                    <p><strong><a href="https://novzo.in/regphp/passreset.php?reset_email='. $reset_email .'&token=' . $token . '">Click here</a></strong> or follow the link to reset your password:</p><br>
+                    <p>https://novzo.in/regphp/passreset.php?reset_email='. $reset_email .'&token=' . $token . '</p>
+                    <p>
+                    Regards,<br>
+                    Support, Novzo
+                    </p>
+                </div>
+            </body>
+        </html>
+        ';
+        if($mail->send()) {
+            $msg2 = "An email has been sent to you. Please verify your email.";
+            $msg2 = "As this is a new venture, our email may go in spam. Please mark it 'Not Spam' and click on the verification link to complete your registration.<br><br> We regret any inconvience.";
+        }
+        else {
+            $msg2 = "Something Went Wrong. Please Try Again.";
+        }
       }
       catch (Exception $e)
       {
@@ -168,7 +229,7 @@
 
 });
 	</script>
-    
+
     <section class="relative">
   <div class="cd-user-modal" style="padding-top:2em;"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -260,14 +321,14 @@
     </div> <!-- cd-user-modal-container -->
   </div> <!-- cd-user-modal -->
 </section>
-    
+
   <section class="contact-page-area relative" style="padding-top:7em;padding-bottom:7em;">
     <div class="container cart-container">
     <div class="box">
       <div class="container">
           <div class="row row-centered">
           <section class="wrapper banner-content" style="padding-top:20px;">
-            <p style="color:black"><?php echo $msg; ?><br/><br/>
+            <p style="color:black"><?php echo $msg1; ?><br/><br/>
             <span class="menu-active main-nav"><a class="cd-signin hov" href="#0" style="color:#fff;">Login</a></span>
           </section>
         </div>

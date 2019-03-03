@@ -10,7 +10,8 @@
       ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       Name VARCHAR(255) NOT NULL,
       msg VARCHAR(255) NOT NULL,
-      sender VARCHAR(255) DEFAULT NULL,
+      sender_email VARCHAR(255) NOT NULL,
+      sender TINYINT(1) DEFAULT 0,
       send_time DateTime
     )";
     mysqli_query($con_chat,$query1);
@@ -19,7 +20,8 @@
       ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       Name VARCHAR(255) NOT NULL,
       msg VARCHAR(255) NOT NULL,
-      sender VARCHAR(255) DEFAULT NULL,
+      sender_email VARCHAR(255) NOT NULL,
+      sender TINYINT(1) DEFAULT 0,
       send_time DateTime
     )";
     mysqli_query($con_chat,$query2);
@@ -189,7 +191,7 @@
 </body>
 
 </html>
-<?php }
+<?php 
   }else{
   header('location:index.php');
 } ?>

@@ -1,36 +1,36 @@
 <?php
     // session_start();
     require "../dbconnect/connect_to_signups.php";
-    
+
     if(isset($_POST['reset_email'])){
         $reset_email=$_POST['reset_email'];
-    } 
+    }
     if(isset($_POST['token'])){
-        $token=$_POST['token'];   
+        $token=$_POST['token'];
     }
 
     $reset_email = $_POST['reset_email'];
     $token = $_POST['token'];
-    
+
     if((isset($_SESSION['display_passstatus']) && $_SESSION['display_passstatus'] === TRUE) || isset($_POST['cpassword']) || isset($_POST['npassword'])){
-        $npassword = $con->real_escape_string($_POST['npassword']);
-        $cpassword = $con->real_escape_string($_POST['cpassword']);
-        
+        $npassword = $con_signups->real_escape_string($_POST['npassword']);
+        $cpassword = $con_signups->real_escape_string($_POST['cpassword']);
+
         if($cpassword == $npassword){
-            
+
             $hashed_password = $con->real_escape_string(password_hash($npassword, PASSWORD_DEFAULT));
-    
+
             $query = "SELECT * FROM Registrations WHERE Email='$reset_email'";
             $result = mysqli_query($con,$query);
             $num = mysqli_num_rows($result);
-    
-            if ($num>0) {
+
+            if ($num > 0) {
                 $data = mysqli_fetch_array($result);
                 if($data['Password'] == $hashed_password){
                     $msg = "This is your existing password. Please choose a different password.";
                 }else{
                     $q = "UPDATE Registrations SET Password='$hashed_password' WHERE Email='$reset_email'";
-                    if(mysqli_query($con,$q)){
+                    if(mysqli_query($con_signups,$q)){
                         $msg = "Updated Successfully";
                     }else{
                         $msg = "Some error occurred. Try again.";
@@ -153,7 +153,7 @@
 
 });
 	</script>
-    
+
     <section class="relative">
   <div class="cd-user-modal" style="padding-top:2em;"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -245,7 +245,7 @@
     </div> <!-- cd-user-modal-container -->
   </div> <!-- cd-user-modal -->
 </section>
-    
+
   <section class="contact-page-area relative" style="padding-top:7em;padding-bottom:7em;">
     <div class="container cart-container">
     <div class="box">
