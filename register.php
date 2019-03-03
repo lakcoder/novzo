@@ -203,6 +203,8 @@
           <section class="wrapper banner-content" style="padding-top:20px;">
             <p style="color:black">Register Now</p>
             <h3 class="wrapper banner-content">Create an account to avail our services.</h3>
+            <h3 class="wrapper banner-content"><?php echo $msgr1 ?></h3>
+            <h3 class="wrapper banner-content"><?php echo $msgr2 ?></h3>
             <div id="login"> <!-- log in form -->
               <form class="cd-form" action="register.php" method="POST">
                 <p class="fieldset">
