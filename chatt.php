@@ -137,14 +137,15 @@
             </ul>
           </div> <!-- end of people list -->
         </div><!-- end of col-3 -->
-        <div class="col-lg-9 d-flex align-items-center justify-content-center chat-box">
+        <div class="col-lg-9 d-flex align-items-center justify-content-center chat-box" id="chat-box">
           <div class="chat">
             <div class="chat-header clearfix">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+              <i class="chat-back ti-arrow-left" id="chat-back"style="float:left"></i>
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" class="chat-img"/>
 
               <div class="chat-about">
-                <div class="chat-with">Chat with Vincent Porter</div>
-                <div class="chat-num-messages">already 1 902 messages</div>
+                <div class="chat-with">Vincent Porter</div>
+                <!-- <div class="chat-num-messages">already 1 902 messages</div> -->
               </div>
               <i class="fa fa-star"></i>
             </div> <!-- end chat-header -->
@@ -155,7 +156,7 @@
                   <div class="message other-message float-right">
                     Hi Vincent, how are you? How is the project coming along?
                   </div>
-                  <div class="message-data align-right">
+                  <div class="message-data">
                     <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
                     <!-- <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i> -->
 
