@@ -26,6 +26,8 @@
 }
 .people-list .search {
   padding: 20px;
+  position: absolute;
+  top:0px;
 }
 .people-list input {
   border-radius: 3px;
@@ -172,12 +174,12 @@
   cursor: pointer;
 }
 .chat .chat-message button {
-  /* float: right; */
+  float: right;
   color: #94C2ED;
 
   border-radius: 5px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
@@ -227,19 +229,44 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .chat {
-    display:block;
+  #chat-box {
+    display:none;
   }
   #chat-back{
     display:block;
   }
-  .people-list {
+  .people-list .search {
     width:100%;
+  }
+
+  .people-list {
+    display:block;
+    width:100%;
+    padding-left:
+  }
+  .chat .chat-message textarea {
+    width:90%;
   }
 }
 
+div.myautoscroll {
+        height: 40ex;
+        width: 40em;
+        overflow: hidden;
+        border: 1px solid #444;
+        margin: 3em;
+    }
+    div.myautoscroll:hover {
+        overflow: auto;
+    }
+    div.myautoscroll p {
+        padding-right: 16px;
+    }
+    div.myautoscroll:hover p {
+        padding-right: 0px;
+    }
 /* Scrollbar styles */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 width: 5px;
 height: 5px;
 }
@@ -248,14 +275,14 @@ height: 5px;
 width: 10px;
 height: 10px;
 }
+
 ::-webkit-scrollbar-track {
-box-shadow: inset 0 0 10px olivedrab;
+box-shadow: inset 0 0 10px;
 border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
 border-radius: 10px;
-background: yellowgreen;
 box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 width: 10px;
 height: 10px;
@@ -263,4 +290,4 @@ height: 10px;
 
 ::-webkit-scrollbar-thumb:hover {
 background: #7bac10;
-}
+} */
