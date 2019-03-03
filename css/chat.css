@@ -229,12 +229,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  #chat-box {
+  /* #chat-box {
     display:none;
   }
   #chat-back{
     display:block;
-  }
+  } */
   .people-list .search {
     width:100%;
   }
