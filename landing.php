@@ -42,10 +42,10 @@
     </a>
   </div>
 </div>
-<section>
-  <div class="container-fluid">
+<section class="home-banner-area relative" style="padding-top:3em; padding-bottom:3em;">
+  <div class="container">
   <div class="row">
-    <div class="col-md-3 col-6 mx-auto">
+    <div class="col-md-3 col-6">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-6 mx-auto">
+    <div class="col-md-3 col-6 ">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-6 mx-auto">
+    <div class="col-md-3 col-6 ">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-6 mx-auto">
+    <div class="col-md-3 col-6 ">
       <div class="block-container">
         <img src="img/abstract_triangle-01.png" alt="Avatar" class="block-image">
         <div class="block-overlay">
