@@ -1,6 +1,12 @@
 <?php
-    session_start();
+  session_start();
+
+  if(isset($_POST['register'])){
+    require "dbconnect/connect_to_books.php";
+
     $pageTitle = $q;
+  }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,9 +22,13 @@
           <form action="search.php" method="post">
           <ul>
             <li><a id="price_but" href="#" class="btn btn-info" role="button">Price</a></li>
+            <section class="range-slider" id="facet-price-range-slider">
+	             <input name="range-1" value="0" min="0" max="2000" step="1" type="range">
+	             <input name="range-2" value="2000" min="0" max="2000" step="1" type="range">
+            </section>
             <div id="price" style="display:none">
-                <input type="number" name="min" placeholder="Min Value" />
-                <input type="number" name="max" placeholder="Max Value" />
+              <input type="number" name="min" placeholder="Min Value" value="" />
+              <input type="number" name="max" placeholder="Max Value" value=""/>
             </div>
             <li><a id="type_but" href="#" class="btn btn-info" role="button">Type</a></li>
             <div id="btype" style="display:none">
