@@ -4,24 +4,24 @@
 <body>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<div id="flipkart-navbar">
+<div id="navbar">
     <div class="container">
-        <div class="row row2">
+        <div class="row row2 js__header-sticky">
             <div class="col-sm-2">
                 <h2 style="margin:0px;"><span class="smallnav menu" onclick="openNav()">☰</span></h2>
                 <a href="index.php"><img src="img/logos/tt2.png" alt="Novzo Logo" height="55.76" width ="100" /></a>
             </div>
-            <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
+            <div class="navbar-search smallsearch col-sm-8 col-xs-11">
               <form>
                 <div class="row">
                     <select class="full-width has-padding has-border col-xs-1" id="type" name="type" required>
-                      <!-- <option value="" selected="" disabled="" hidden="">Books</option> -->
+                      <option value="" selected disabled hidden>ALL</option>
                       <option value="Books">Books</option>
                       <option value="New">Posts</option>
                       <!-- <option value="Second_Hand">Second Hand</option> -->
                     </select>
-                    <input class="flipkart-navbar-input col-xs-10" type="" placeholder="Search" name="" />
-                    <button type="submit" class=" ti-search flipkart-navbar-button col-xs-1">
+                    <input class="col-xs-9 navbar-input" type="" placeholder="Search" name="" />
+                    <button type="submit" class=" ti-search navbar-button col-xs-1" name="search_web">
                         <!-- <svg width="15px" height="15px">
                             <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
                         </svg> -->
@@ -36,15 +36,12 @@
                     </svg>  -->
                     <span id="login-button" class="item-number">Login</span>
                     <div class="login-container">
-                      <form id="login-form" class="login-form">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
-                        <input type="submit" value="SUBMIT" style="width:100%" />
+                      <form action="regphp/validate.php" id="login-form" class="login-form">
+                        <input type="text" placeholder="Email" name="email">
+                        <input type="password" placeholder="Password" name="password">
+                        <input type="submit" value="SUBMIT" name="login" style="width:100%" />
                         <!-- <a href="register.php">Not registered?</a> -->
                       </form>
-                      <script type="text/javascript">
-
-                      </script>
                     </div>
                 </a>
             </div>

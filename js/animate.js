@@ -125,6 +125,65 @@ $("#cforgot").click(function() {
 //   $("#signup").animate({opacity: 0}, 1000);
 // });
 
+// Filters //
+
+//Price
+var price = 0;
+$('#price_but').click(function() {
+  if(price%2 == 0){
+    $('#price').css({"display":"block"});
+  }else{
+    $('#price').css({"display":"none"});
+  }
+  price++;
+});
+//
+
+//Type
+var type = 0;
+$('#type_but').click(function() {
+  if(type%2 == 0){
+    $('#btype').css({"display":"block"});
+  }else{
+    $('#btype').css({"display":"none"});
+  }
+  type++;
+});
+
+function type()
+{
+    if($('.buy').is(":checked"))
+        $(".buy_res").show();
+    else
+        $(".buy_res").hide();
+}
+//
+
+//City
+var city = 0;
+$('#city_but').click(function() {
+  if(city%2 == 0){
+    $('#city').css({"display":"block"});
+  }else{
+    $('#city').css({"display":"none"});
+  }
+  city++;
+});
+//
+
+var sort = 0;
+$('#sort_but').click(function() {
+  if(sort%2 == 0){
+    $('#sort').css({"display":"block"});
+  }else{
+    $('#sort').css({"display":"none"});
+  }
+  sort++;
+});
+
+//
+
+
 function show_post(){
   document.getElementById('post').style.visibility="hidden";
   document.getElementById('post_desc').style.visibility="visible";
