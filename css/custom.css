@@ -147,3 +147,9 @@ div#features figure figcaption {
 	padding-left: 30px;
 	border-right: solid #000000;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
