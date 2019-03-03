@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <div id="navbar">
     <div class="container">
-        <div class="row row2 js__header-sticky">
+        <div id="sticky_nav" class="row row2">
             <div class="col-sm-2">
                 <h2 style="margin:0px;"><span class="smallnav menu" onclick="openNav()">☰</span></h2>
                 <a href="index.php"><img src="img/logos/tt2.png" alt="Novzo Logo" height="55.76" width ="100" /></a>
@@ -46,7 +46,7 @@
                 </a>
             </div>
         </div>
-		<div class="row1">
+		    <header class="row1 nav-down">
             <ul class="largenav list-inline d-flex justify-content-around">
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 1</a></li>
                 <li class="upper-links"><a class="links" href="https://campusbox.org/">Link 2</a></li>
@@ -63,7 +63,7 @@
                         <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
                     </ul>
                 </li>
-				<li class="upper-links">
+				        <li class="upper-links">
                     <a class="links" href="http://clashhacks.in/">
                         <svg class="" width="16px" height="12px" style="overflow: visible;">
                             <span class="ti-shopping-cart"></span><!-- <path d="M8.037 17.546c1.487 0 2.417-.93 2.417-2.417H5.62c0 1.486.93 2.415 2.417 2.415m5.315-6.463v-2.97h-.005c-.044-3.266-1.67-5.46-4.337-5.98v-.81C9.01.622 8.436.05 7.735.05 7.033.05 6.46.624 6.46 1.325v.808c-2.667.52-4.294 2.716-4.338 5.98h-.005v2.972l-1.843 1.42v1.376h14.92v-1.375l-1.842-1.42z" fill="#fff"></path> -->
@@ -71,7 +71,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </header>
     </div>
 </div>
 <div id="mySidenav" class="sidenav">
