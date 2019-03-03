@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $pageTitle = 'Dashboard';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- <head>
@@ -13,10 +17,10 @@
   <?php include("includes/header.php");?>
   <?php include("includes/signup.php") ?>
   <div class="row">
-    <div class="col-lg-3 col-3 mx auto m-3" style="border-right : 2px solid grey";>
+    <div class="col-lg-3 col-3 mx auto" style="border-right : 2px solid grey;">
       <div class="container">
       <ul>
-        <li><img src="img/abstract_triangle-01.png" alt="Avatar" style="width:100px"></li>
+        <li><img src="img/abstract_triangle-01.png" alt="Avatar" style="position: alwidth:100px:left:50%;right:50%"></li>
         <li><a href="#" class="btn btn-info" role="button">MY FEED</a></li>
         <li><a href="#" class="btn btn-info" role="button">SETTINGS</a></li>
         <li><a href="#" class="btn btn-info" role="button">SETTINGS</a></li>
