@@ -15,7 +15,7 @@
               <form>
                 <div class="row">
                     <select class="full-width has-padding has-border col-xs-1" id="type" name="type" required>
-                      <option value="" selected disabled hidden>ALL</option>
+                      <option value="All" selected>ALL</option>
                       <option value="Books">Books</option>
                       <option value="New">Posts</option>
                       <!-- <option value="Second_Hand">Second Hand</option> -->

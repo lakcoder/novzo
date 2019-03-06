@@ -11,6 +11,8 @@
 
   if(isset($_POST['register'])){
     require "dbconnect/connect_to_signups.php";
+    require "dbconnect/connect_to_books.php";
+    require "dbconnect/connect_to_chat.php";
 
     $name = $con_signups->real_escape_string($_POST['name']);
     $email = $con_signups->real_escape_string($_POST['email']);
@@ -33,8 +35,8 @@
         $token = substr($token, 0, 10);
 
         $q="INSERT INTO Registrations(Name,Email,Contact,Password,Token,Confirmed) VALUES('$name','$email','$contact','$hashed_password','$token','0')";
-        // $query = "INSERT INTO Users(Contact,Email) VALUES('$contact','$email')";
         $registered = mysqli_query($con_signups ,$q);
+
         $q2 = "SELECT * FROM Registrations WHERE Email = '$email'";
         $res = mysqli_query($con_signups,$q2);
         $num = mysqli_num_rows($res);
@@ -49,6 +51,22 @@
             $msg1 = "There was some error. Contact: 7738446941.";
           }
         }
+
+        $q3 = "INSERT INTO Books(Email) VALUES('$email')";
+        $books = mysqli_query($con_books,$q3);
+
+        $q_chat = "CREATE TABLE IF NOT EXISTS $email(
+          ID INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+          Name VARCHAR(255) NOT NULL,
+          msg VARCHAR(255) NOT NULL,
+          sender_email VARCHAR(255) NOT NULL,
+          sender TINYINT(1) DEFAULT 0,
+          send_time DateTime
+        )";
+        $chat_table = mysqli_query($con_chat,$q_chat);
+
+        $q4 = "INSERT INTO $email(Name) VALUES('$name')";
+        $chat = mysqli_query($con_chat,$q4);
 
         require 'vendor/autoload.php';
 

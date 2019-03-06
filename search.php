@@ -3,6 +3,43 @@
 
   if(isset($_POST['register'])){
     require "dbconnect/connect_to_books.php";
+    require "dbconnect/connect_to_forum.php";
+
+    $type = $_GET['type'];
+    $query = $_GET['query'];
+    $ref = $_GET['ref'];
+
+    if($type == 'Posts'){
+      if($query == ""){
+        $qp_all = "SELECT * FROM Books";
+        $res = mysqli_query($con2,$qp_all);
+        while($row = mysqli_fetch_array($res)){
+
+        }
+      }else{
+        $qp_all = "SELECT * FROM Books";
+        $res = mysqli_query($con2,$qp_all);
+        while($row = mysqli_fetch_array($res)){
+
+        }
+      }
+    }elseif($type == 'Books'){
+      if($query == ""){
+        $qp_all = "SELECT * FROM Books";
+        $res = mysqli_query($con2,$qp_all);
+        while($row = mysqli_fetch_array($res)){
+
+        }
+      }else{
+        $qp_all = "SELECT * FROM Books WHERE Books = ";
+      }
+    }else{
+      if($query == ""){
+        $q = "SELECT * ";
+      }else{
+
+      }
+    }
 
     $pageTitle = $q;
   }
